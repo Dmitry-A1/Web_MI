@@ -13,10 +13,35 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+<header class="navbar navbar-expand-lg navbar-dark py-3 custom-navbar">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Mi">
+            <img src="assets/images/mi-logo.svg" alt="Mi Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Открыть меню">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start">
+                <li class="nav-item"><a class="nav-link" href="#product">О продукте</a></li>
+                <li class="nav-item"><a class="nav-link" href="#appearance">Внешний вид</a></li>
+                <li class="nav-item"><a class="nav-link" href="#safety">Безопасность</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <button id="buyBtn" class="btn btn-accent">Купить</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 
 
 
 <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

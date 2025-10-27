@@ -10,7 +10,7 @@
 body{
     font-family: var(--font-main);
     background-color: var(--color-bg-dark);
-    color: var(--color-bg-dark);
+    color: var(--color-bg-light);
     margin: 0;
     padding: 0;
 }
@@ -28,4 +28,42 @@ body{
 
 .btn-accent:hover{
     background-color: #e64500 ;
+}
+
+.custom-navbar {
+    background-color: rgba(14,14,14,0.8); /* полупрозрачный тёмный фон */
+    position: fixed;  /* чтобы navbar был всегда сверху */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: background-color 0.3s;
+}
+
+.custom-navbar .navbar-brand img {
+    height: 28px; /* как в макете */
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-text-light);
+    margin: 0 12px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-accent);
+}
+
+#buyBtn {
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Отступы для мобильных экранов */
+@media (max-width: 991px) {
+    .navbar-nav .nav-item {
+        margin-bottom: 12px;
+    }
 }
