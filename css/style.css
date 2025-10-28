@@ -251,8 +251,8 @@ body::after {
 }
 
 .custom-navbar {
-    background-color: rgba(14,14,14,0.8); /* полупрозрачный тёмный фон */
-    position: fixed;  /* чтобы navbar был всегда сверху */
+    background-color: rgba(14,14,14,0.8);
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -368,7 +368,18 @@ body::after {
     color: var(--color-accent);
 }
 
+.happy_img{
+    position: relative;
+    padding-top: 40px;
+}
 
+.overlay-content{
+    z-index: 2;
+}
+.overlay-content img{
+    position: absolute;
+    top: -200%;
+}
 
 
 
