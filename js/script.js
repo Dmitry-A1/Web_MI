@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".mode-item");
     const activeLine = document.querySelector(".mode-line-active");
-    const defaultIndex = 0; // первая колонка активна по умолчанию
-
+    const defaultIndex = 0;
     items.forEach((item, index) => {
         item.addEventListener("mouseenter", () => {
             // Двигаем линию
