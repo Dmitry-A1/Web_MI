@@ -5,6 +5,7 @@
     --color-text-dark: #111111;
     --color-text-light: #f1f1f1;
     --font-main: "Inter", sans-serif;
+    --color-gray: rgba(255, 255, 255, 0.2);
 }
 
 body{
@@ -115,3 +116,421 @@ body::after {
     max-width: 100%;
     height: auto;
 }
+
+#modes {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#modes .row {
+    position: relative;
+}
+
+
+.mode-line {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.mode-line-active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 33.333%;
+    background-color: var(--color-accent);
+    transition: left 0.4s ease;
+}
+
+
+.mode-item {
+    position: relative;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.mode-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 40px ;
+    color: var(--color-text-light);
+}
+
+.mode-text {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+.mode-item.active .mode-title {
+    color: var(--color-accent);
+}
+
+:root{
+    --color-bg-dark: #0e0e0e;
+    --color-bg-light: #ffffff;
+    --color-accent: #ff4d00;
+    --color-text-dark: #111111;
+    --color-text-light: #f1f1f1;
+    --font-main: "Inter", sans-serif;
+    --color-gray: rgba(255, 255, 255, 0.2);
+}
+
+body{
+    font-family: var(--font-main);
+    background-color: var(--color-bg-dark);
+    color: var(--color-bg-light);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: auto;
+}
+
+body::before,
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255,77,0,0.15);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+
+.circle.c1 { width: 400px; height: 400px; top: 100px; right: 50px; }
+.circle.c2 { width: 300px; height: 300px; bottom: 150px; left: 50px; }
+.circle.c3 { width: 250px; height: 250px; top: 300px; left: 200px; }
+
+
+body::after {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 77, 0, 0.06);
+    bottom: 150px;
+    left: 50px;
+}
+
+.container{
+    max-width: 1200px;
+}
+
+.btn-accent{
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-accent:hover{
+    background-color: #e64500 ;
+}
+
+.custom-navbar {
+    background-color: rgba(14,14,14,0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: background-color 0.3s;
+}
+
+.custom-navbar .navbar-brand img {
+    height: 28px; /* как в макете */
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-text-light);
+    margin: 0 12px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-accent);
+}
+
+#buyBtn {
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+
+@media (max-width: 991px) {
+    .navbar-nav .nav-item {
+        margin-bottom: 12px;
+    }
+}
+
+#hero{
+    height: calc(90vh - 20px);
+    display: flex;
+    align-items: center;
+    color: var(--color-text-light);
+    padding-top: 50px;
+}
+
+#hero .ct {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 60px;
+}
+
+.hero-title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+}
+.hero-subtitle{
+    font-size: 1rem;
+    color: var(--color-accent);
+}
+
+.hero-image{
+    max-width: 100%;
+    height: auto;
+}
+
+#modes {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#modes .row {
+    position: relative;
+}
+
+
+.mode-line {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.mode-line-active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 33.333%;
+    background-color: var(--color-accent);
+    transition: left 0.4s ease;
+}
+
+
+.mode-item {
+    position: relative;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.mode-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 40px ;
+    color: var(--color-text-light);
+}
+
+.mode-text {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+:root{
+    --color-bg-dark: #0e0e0e;
+    --color-bg-light: #ffffff;
+    --color-accent: #ff4d00;
+    --color-text-dark: #111111;
+    --color-text-light: #f1f1f1;
+    --font-main: "Inter", sans-serif;
+    --color-gray: rgba(255, 255, 255, 0.2);
+}
+
+body{
+    font-family: var(--font-main);
+    background-color: var(--color-bg-dark);
+    color: var(--color-bg-light);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: auto;
+}
+
+body::before,
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255,77,0,0.15);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+
+.circle.c1 { width: 400px; height: 400px; top: 100px; right: 50px; }
+.circle.c2 { width: 300px; height: 300px; bottom: 150px; left: 50px; }
+.circle.c3 { width: 250px; height: 250px; top: 300px; left: 200px; }
+
+
+body::after {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 77, 0, 0.06);
+    bottom: 150px;
+    left: 50px;
+}
+
+.container{
+    max-width: 1200px;
+}
+
+.btn-accent{
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-accent:hover{
+    background-color: #e64500 ;
+}
+
+.custom-navbar {
+    background-color: rgba(14,14,14,0.8); /* полупрозрачный тёмный фон */
+    position: fixed;  /* чтобы navbar был всегда сверху */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: background-color 0.3s;
+}
+
+.custom-navbar .navbar-brand img {
+    height: 28px; /* как в макете */
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-text-light);
+    margin: 0 12px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-accent);
+}
+
+#buyBtn {
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Отступы для мобильных экранов */
+@media (max-width: 991px) {
+    .navbar-nav .nav-item {
+        margin-bottom: 12px;
+    }
+}
+
+#hero{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    color: var(--color-text-light);
+
+}
+
+.hero-title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+}
+.hero-subtitle{
+    font-size: 1rem;
+    color: var(--color-accent);
+}
+
+.hero-image{
+    max-width: 100%;
+    height: auto;
+}
+
+#modes {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#modes .row {
+    position: relative;
+}
+
+
+.mode-line {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.mode-line-active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 33.333%;
+    background-color: var(--color-accent);
+    transition: left 0.4s ease;
+}
+
+
+.mode-item {
+    position: relative;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.mode-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 40px ;
+    color: var(--color-text-light);
+}
+
+.mode-text {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+.mode-item:hover .mode-title {
+    color: var(--color-accent);
+}
+
+
+
+
+

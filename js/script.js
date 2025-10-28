@@ -15,3 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".mode-item");
+    const activeLine = document.querySelector(".mode-line-active");
+    const defaultIndex = 0; // первая колонка активна по умолчанию
+
+    items.forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+            // Двигаем линию
+            activeLine.style.left = `${index * 33.333}%`;
+
+            // Меняем цвет заголовков
+            items.forEach(i => i.querySelector(".mode-title").style.color = "var(--color-text-light)");
+            item.querySelector(".mode-title").style.color = "var(--color-accent)";
+        });
+    });
+
+    const row = document.querySelector("#modes .row");
+    row.addEventListener("mouseleave", () => {
+        // Возвращаем линию и цвет заголовка к дефолту
+        activeLine.style.left = `${defaultIndex * 33.333}%`;
+        items.forEach(i => i.querySelector(".mode-title").style.color = "var(--color-text-light)");
+        items[defaultIndex].querySelector(".mode-title").style.color = "var(--color-accent)";
+    });
+});
