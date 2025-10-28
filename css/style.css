@@ -381,5 +381,24 @@ body::after {
     top: -200%;
 }
 
+.overlay-bg{
+    background-color: rgba(0,0,0,0.6);
 
+}
 
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.card-img-overlay h5,
+.card-img-overlay p {
+    margin: 0;
+}
+
+.text-title{
+    color: var(--color-accent);
+    padding-bottom: 2rem;
+}
