@@ -465,3 +465,8 @@ body::after {
 .mode-item-4:hover .mode-title-4 {
     color: var(--color-accent);
 }
+
+.store-btn{
+    border-radius: 10px;
+    background-color: var(--color-bg-light);
+}
