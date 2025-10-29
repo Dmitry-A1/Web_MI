@@ -343,6 +343,7 @@ body::after {
 }
 
 
+
 .mode-item {
     position: relative;
     padding: 40px 20px;
@@ -350,12 +351,14 @@ body::after {
     transition: color 0.3s;
 }
 
+
 .mode-title {
     font-size: 1.4rem;
     font-weight: 600;
     padding-bottom: 40px ;
     color: var(--color-text-light);
 }
+
 
 .mode-text {
     color: var(--color-text-light);
@@ -401,4 +404,64 @@ body::after {
 .text-title{
     color: var(--color-accent);
     padding-bottom: 2rem;
+}
+
+#modes-4 {
+    position: relative;
+
+    padding-bottom: 80px;
+}
+
+#modes-4 .row {
+    position: relative;
+}
+
+
+.mode-line-4 {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.mode-line-active-4 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background-color: var(--color-accent);
+    transition: left 0.4s ease;
+}
+
+
+
+.mode-item-4 {
+    position: relative;
+    padding: 40px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+
+.mode-title-4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 40px ;
+    color: var(--color-text-light);
+}
+
+
+.mode-text-4 {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+.mode-item-4:hover .mode-title-4 {
+    color: var(--color-accent);
 }
