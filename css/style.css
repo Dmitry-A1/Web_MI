@@ -261,7 +261,7 @@ body::after {
 }
 
 .custom-navbar .navbar-brand img {
-    height: 28px; /* как в макете */
+    height: 28px;
 }
 
 .navbar-nav .nav-link {
@@ -470,3 +470,20 @@ body::after {
     border-radius: 10px;
     background-color: var(--color-bg-light);
 }
+
+#about .overlay-content {
+    bottom: 200px;
+    right: 200px;
+}
+
+#about .overlay-content h3.about_text {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+}
+
+#about .overlay-content p.about_text {
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
