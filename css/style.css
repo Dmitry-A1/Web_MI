@@ -486,4 +486,54 @@ body::after {
     margin-bottom: 10px;
     max-width: 500px;
 }
+#card .color{
+    color: var(--color-text-light);
+}
 
+.line{
+    border-color: var(--color-accent) !important;
+    opacity: 100% !important;
+    width: 30% !important;
+}
+
+.btn-add{
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark) ;
+    border: 1px solid var(--color-text-light);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.btn-add:hover{
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+}
+
+.btn-circle{
+    background-color: var(--color-bg-light);
+    width: 40px;
+    height: 40px;
+    color: var(--color-text-dark);
+    border-radius: 50px;
+    border: 1px solid var(--color-text-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-circle:hover{
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    border-color: var(--color-accent);
+}
+
+.carousel-wrapper{
+    height: 405px;
+    overflow: hidden;
+}
+.carousel-inner{
+    height: 100%;
+}
+.carousel-item{
+    height: 100%;
+}
