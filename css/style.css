@@ -500,7 +500,7 @@ body::after {
     background-color: var(--color-bg-light);
     color: var(--color-text-dark) ;
     border: 1px solid var(--color-text-light);
-    border-radius: 10px;
+    border-radius: 20px;
     transition: 0.3s;
 }
 .btn-add:hover{
