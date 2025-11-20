@@ -416,19 +416,27 @@
 </section>
 
 <div class="modal fade" id="order" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Оформление заказа</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="formOrder" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="FormControlFIO" class="form-label">Введите ФИО</label>
+                        <div class="input-group">
+                            <div class="input-group-text">👤</div>
+                            <textarea type="text" class="form-control " id="FormControlFIO" rows="1" placeholder="Иванов Иван Иванович" required></textarea>
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
                         <div class="input-group">
                             <div class="input-group-text">📮</div>
-                            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+                            <input type="email" class="form-control " id="InputEmail1" aria-describedby="emailHelp" placeholder="name@example.com" required>
+                            <div class="invalid-feedback">Пожалуйста, введите корректный email</div>
                         </div>
                         <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
                     </div>
@@ -439,7 +447,8 @@
                             <div class="input-group-text">
                                 📞
                             </div>
-                            <input type="tel" class="form-control" id="InputNumberPhone" placeholder="+7 (___) ___-__-__">
+                            <input type="tel" class="form-control" id="InputNumberPhone" placeholder="+7 (___) ___-__-__" required>
+                            <div class="invalid-feedback">Введите номер телефона</div>
                         </div>
                     </div>
 
@@ -459,18 +468,18 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="FormControlAdress" class="form-label">Введите адрес доставки</label>
-                        <textarea class="form-control" id="FormControlAdress" rows="1"></textarea>
+                        <label for="FormControlAddress" class="form-label">Введите адрес доставки</label>
+                        <div class="input-group">
+                            <div class="input-group-text">🏠</div>
+                            <textarea type="text" class="form-control " id="FormControlAddress" rows="1" required></textarea>
+                        </div>
                     </div>
-
                     <div class="mb-3">
                         <label for="FormControlComment" class="form-label">Комментарий к заказу</label>
-                        <textarea class="form-control" id="FormControlComment" rows="3"></textarea>
+                        <textarea class="form-control" id="FormControlComment" rows="3" ></textarea>
                     </div>
+                    <button type="submit" class="btn btn-secondary submitBtn " data-bs-dismiss="submitBtn">Отправить заказ</button>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отправить заказ</button>
             </div>
         </div>
     </div>

@@ -567,3 +567,7 @@ body::after {
 footer p{
     font-size: 9px;
 }
+
+.submitBtn{
+    background-color: var(--color-accent);
+}

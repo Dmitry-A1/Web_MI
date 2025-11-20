@@ -64,3 +64,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+(function () {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+document.getElementById('submitBtn').addEventListener('click', function (event) {
+    const form = document.querySelector('#formOrder');
+
+    if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+    } else {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('myModal'));
+        modal.hide();
+    }
+});
