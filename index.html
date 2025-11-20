@@ -31,7 +31,7 @@
                 <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
                 <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <button id="buyBtn" class="btn btn-accent">Купить</button>
+                    <button id="buyBtn" class="btn btn-accent" data-bs-target="#order" data-bs-toggle="modal">Купить</button>
                 </li>
             </ul>
         </nav>
@@ -404,7 +404,7 @@
                         <p>Руководство пользователя</p>
                         <p>Буклет с информацией</p>
                     </div>
-                    <button class="btn btn-accent">Купить</button>
+                    <button class="btn btn-accent" data-bs-target="#order" data-bs-toggle="modal">Купить</button>
                 </div>
                 <div class="col-8">
                     <img src="assets/images/product_card_1.png" alt="Mi Electric Scooter Pro 2" width="100%" height="auto">
@@ -412,9 +412,70 @@
 
             </div>
         </div>
-
     </div>
 </section>
+
+<div class="modal fade" id="order" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Оформление заказа</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
+                        <div class="input-group">
+                            <div class="input-group-text">📮</div>
+                            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+                        </div>
+                        <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="InputNumberPhone" class="form-label">Номер телефона</label>
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                📞
+                            </div>
+                            <input type="tel" class="form-control" id="InputNumberPhone" placeholder="+7 (___) ___-__-__">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Выберите цвет</label>
+                        <div class="d-flex gap-3">
+                            <input type="radio" class="btn-check" name="colorOptions" id="whiteColor" value="#ffffff">
+                            <label class="btn btn-outline-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="whiteColor" title="Белый" style="width: 50px; height: 50px;">
+                                <div style="width: 30px; height: 30px; background-color: #ffffff; border-radius: 50%; border: 1px solid #ccc;"></div>
+                            </label>
+
+                            <input type="radio" class="btn-check" name="colorOptions" id="blackColor" value="#000000" checked>
+                            <label class="btn btn-outline-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="blackColor" title="Чёрный" style="width: 50px; height: 50px;">
+                                <div style="width: 30px; height: 30px; background-color: #000000; border-radius: 50%;"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="FormControlAdress" class="form-label">Введите адрес доставки</label>
+                        <textarea class="form-control" id="FormControlAdress" rows="1"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="FormControlComment" class="form-label">Комментарий к заказу</label>
+                        <textarea class="form-control" id="FormControlComment" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отправить заказ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer class="container py-3">
     <p>&copy;2010-2011 Xiaomi.</p>
     <p>Все права защищены.</p>

@@ -63,3 +63,4 @@ document.addEventListener("DOMContentLoaded", () => {
         items[defaultIndex].querySelector(".mode-title-4").style.color = "var(--color-accent)";
     });
 });
+
