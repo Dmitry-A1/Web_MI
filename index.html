@@ -336,13 +336,34 @@
             </div>
         </div>
         <div class="d-flex justify-content-between align-items-center mt-4">
-            <button class="btn btn-add">Оставить отзыв</button>
+            <button class="btn btn-add" data-bs-target="#review" data-bs-toggle="modal">Оставить отзыв</button>
             <div>
                 <button class="btn-circle" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev"><span>&#10094;</span></button>
                 <button class="btn-circle" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next"><span>&#10095;</span></button>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="review" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Отзыв</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="FormControlName" class="form-label">Ваше имя</label>
+                    <textarea type="text" class="form-control " id="FormControlName" rows="1" placeholder="Иванов Иван Иванович"></textarea>
+                    <div id="nameHelp" class="form-text">Поле необязательно для заполнения</div>
+
+
+                    <label for="FormControlRevComment" class="form-label">Ваш комментарий</label>
+                    <textarea type="text" class="form-control " id="FormControlRevComment" rows="3" required></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 <section id="faq">
@@ -419,7 +440,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Оформление заказа</h1>
+                <h1 class="modal-title fs-5" >Оформление заказа</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             <div class="modal-body">
