@@ -336,7 +336,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-between align-items-center mt-4">
-            <button class="btn btn-add" data-bs-target="#review" data-bs-toggle="modal">Оставить отзыв</button>
+            <button class="btn btn-add" data-bs-target="#reviewModalDialog" data-bs-toggle="modal">Оставить отзыв</button>
             <div>
                 <button class="btn-circle" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev"><span>&#10094;</span></button>
                 <button class="btn-circle" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next"><span>&#10095;</span></button>
@@ -344,22 +344,29 @@
         </div>
     </div>
 
-    <div class="modal fade" id="review" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="reviewModalDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5">Отзыв</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body">
-                    <label for="FormControlName" class="form-label">Ваше имя</label>
-                    <textarea type="text" class="form-control " id="FormControlName" rows="1" placeholder="Иванов Иван Иванович"></textarea>
-                    <div id="nameHelp" class="form-text">Поле необязательно для заполнения</div>
+            <div class="modal-content mb-3">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Отзыв</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formReview" class="needs-validation"  novalidate>
+                            <div class="mb-3">
+                                <label for="FormControlName" class="form-label">Ваше имя</label>
+                                <textarea type="text" class="form-control " id="FormControlName" rows="1" placeholder="Иванов Иван Иванович"></textarea>
+                                <div id="nameHelp" class="form-text">Поле необязательно для заполнения</div>
+                            </div>
 
+                            <div class="mb-3">
+                                <label for="FormControlRevComment" class="form-label">Ваш комментарий</label>
+                                <textarea type="text" class="form-control " id="FormControlRevComment" rows="3" required></textarea>
+                            </div>
 
-                    <label for="FormControlRevComment" class="form-label">Ваш комментарий</label>
-                    <textarea type="text" class="form-control " id="FormControlRevComment" rows="3" required></textarea>
-                </div>
+                            <button type="submit" class="btn submitBtn"  data-bs-dismiss="modalReview">Отправить отзыв</button>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>
@@ -371,9 +378,9 @@
         <div class="row">
             <div class="col-5">
                 <h3 class="text-title">Часто задаваемые вопросы</h3>
-                <p>Все ваши часто задаваемы вопросы о электросамокате Mi Scooter Pro 2.</p>
+                <p>Все ваши часто задаваемы вопросы об электросамокате Mi Scooter Pro 2.</p>
                 <p>Если у вас возникли есть собственный вопрос - задайте через форму обратной связи.</p>
-                <button class="btn btn-add">Задать вопрос</button>
+                <button class="btn btn-add" data-bs-target="#faqModelDialog" data-bs-toggle="modal">Задать вопрос</button>
             </div>
             <div class="col-7">
                 <div class="py-1">
@@ -399,6 +406,35 @@
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="faqModelDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        Вопрос
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formFAQ" class="needs-validation"  novalidate>
+                            <div class="mb-3">
+                                <label for="FormControlNameFAQ" class="form-label">Ваше ФИО</label>
+                                <textarea type="text" class="form-control " id="FormControlNameFAQ" rows="1" required></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="FormControlQuestion" class="form-label">Ваш вопрос</label>
+                                <textarea type="text" class="form-control " id="FormControlQuestion" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-secondary submitBtn " id="faqBtn" data-bs-dismiss="faqBtn">Отправить вопрос</button>
+                        </form>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
 </section>
 
 <section id="product_card" class="py-1">

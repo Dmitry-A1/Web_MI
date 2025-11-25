@@ -91,3 +91,28 @@ document.getElementById('submitBtn').addEventListener('click', function (event) 
         modal.hide();
     }
 });
+
+document.getElementById('faqBtn').addEventListener('click', function (event) {
+    const form = document.querySelector('#formOrder');
+
+    if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+    } else {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('faqModelDialog'));
+        modal.hide();
+    }
+});
+document.getElementById('modalReview').addEventListener('click', function (event) {
+    const form = document.querySelector('#formReview');
+
+    if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+    } else {
+        const modal = bootstrap.Modal.getInstance(document.getElementById('reviewModelDialog'));
+        modal.hide()
+    }
+});
