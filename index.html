@@ -2,9 +2,7 @@
 <html lang="ru" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Mi Electric Scooter Pro 2</title>
 
@@ -12,18 +10,21 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<header class="navbar navbar-expand-lg navbar-dark py-3 custom-navbar">
+
+<header class="navbar navbar-expand-lg navbar-dark py-3 custom-navbar" role="banner">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#" aria-label="Mi">
-            <img src="assets/images/mi-logo.svg" alt="Mi Logo">
+        <a class="navbar-brand d-flex align-items-center" href="#hero" aria-label="Mi логотип">
+            <img src="assets/images/mi-logo.svg" alt="Логотип Mi" height="28">
         </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-                aria-controls="navMenu" aria-expanded="false" aria-label="Открыть меню">
+                aria-controls="navMenu" aria-expanded="false" aria-label="Открыть главное меню">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <nav class="collapse navbar-collapse" id="navMenu">
+        <nav class="collapse navbar-collapse" id="navMenu" role="navigation">
             <ul class="navbar-nav ms-auto align-items-lg-center text-center text-lg-start">
                 <li class="nav-item"><a class="nav-link" href="#hero">О продукте</a></li>
                 <li class="nav-item"><a class="nav-link" href="#appearance">Внешний вид</a></li>
@@ -31,7 +32,11 @@
                 <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
                 <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <button id="buyBtn" class="btn btn-accent" data-bs-target="#order" data-bs-toggle="modal">Купить</button>
+                    <button id="buyBtn" class="btn btn-accent"
+                            data-bs-target="#order" data-bs-toggle="modal"
+                            aria-label="Купить Mi Scooter Pro 2">
+                        Купить
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -39,320 +44,345 @@
 </header>
 
 
-<section id="hero">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-6 text-center text-lg-start">
-                <h1 class="hero-title mb-3">Стильный электросамокат с мощным аккумулятором</h1>
-                <p class="hero-subtitle mb-4">Улучшенная производительность для дальних путешествий. Работает так же просто, как и выглядит.</p>
+<main>
+    <section id="hero" class="pt-5 mt-4">
+        <div class="container">
+            <div class="row align-items-center gy-4">
 
-                <div class="btn-group pills-radio" role="group">
-                    <input type="radio" class="btn-check btn-light" name="theme" id="dark_theme" autocomplete="off" checked>
-                    <label class="btn btn-outline-light" for="dark_theme">Белый</label>
+                <div class="col-12 col-lg-6 text-center text-lg-start">
+                    <h1 class="hero-title mb-3">
+                        Стильный электросамокат с мощным аккумулятором
+                    </h1>
+                    <p class="hero-subtitle mb-4">
+                        Улучшенная производительность для дальних путешествий.
+                    </p>
 
-                    <input type="radio" class="btn-check btn-light" name="theme" id="ligth_theme" autocomplete="off">
-                    <label class="btn btn-outline-light" for="ligth_theme">Чёрный</label>
+                    <div class="btn-group pills-radio" role="group" aria-label="Выбор цвета">
+                        <input type="radio" class="btn-check" name="theme" id="whiteTheme" checked>
+                        <label class="btn btn-outline-light" for="whiteTheme">Белый</label>
+
+                        <input type="radio" class="btn-check" name="theme" id="blackTheme">
+                        <label class="btn btn-outline-light" for="blackTheme">Чёрный</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 text-center">
+                    <img src="assets/images/product-hero.png" alt="Mi Scooter Pro 2"
+                         class="img-fluid hero-image">
+                </div>
+
+                <div class="col-12">
+                    <h3 class="text-light fw-bold mt-3 text-center text-lg-start">
+                        Запас хода до 45 км благодаря энергоэффективному аккумулятору
+                    </h3>
                 </div>
 
             </div>
-            <div class="col-6 text-center text-lg-end mt-4 mt-lg-0">
-                <img src="assets/images/product-hero.png" alt="Mi Smart Device" class="img-fluid hero-image">
-            </div>
         </div>
-        <div class="container ct text-start mt-3">
-            <h3 class="text-light fw-bold">
-                Мощная зарядка и экономичный расход заряда позволяют преодолевать расстояние до 45 км
+    </section>
+
+
+    <section id="modes" class="py-5">
+        <div class="container">
+
+            <div class="row gy-4 text-light text-center text-lg-start position-relative">
+
+                <div class="mode-line">
+                    <div class="mode-line-active"></div>
+                </div>
+
+                <div class="col-12 col-md-4 mode-item">
+                    <h3 class="mode-title">Три режима скорости</h3>
+                    <p class="mode-text">
+                        Режимы «S», «D» и «Пешеход» позволяют комфортно ездить в любых условиях.
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-4 mode-item">
+                    <h3 class="mode-title">Восстановление энергии</h3>
+                    <p class="mode-text">
+                        Система рекуперации заряжает аккумулятор при торможении.
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-4 mode-item">
+                    <h3 class="mode-title">Мощная батарея</h3>
+                    <p class="mode-text">
+                        Аккумулятор 12800 мАч позволяет проехать до 45 км.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row gy-4 mt-4">
+                <div class="col-12 col-md-8">
+                    <img src="assets/images/product_2.png" alt="Электросамокат" class="img-fluid w-100">
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="assets/images/product_3.png" alt="Панель управления" class="img-fluid w-100">
+                </div>
+            </div>
+
+            <div class="row position-relative mt-4">
+                <div class="col">
+                    <img src="assets/images/product_4.png" alt="Люди на самокате" class="img-fluid w-100">
+                </div>
+
+                <div class="overlay-content position-absolute top-50 start-50 translate-middle text-start">
+                    <img src="assets/images/mi-logo.svg" alt="Mi логотип" class="img-fluid mb-2">
+                    <h3>Высокая скорость</h3>
+                    <p>Мотор до 600 Вт разгоняет самокат до 25 км/ч.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="appearance" class="py-5">
+        <div class="container">
+            <h3 class="text-title mb-4 text-center text-lg-start">
+                Лаконичный современный дизайн
             </h3>
-        </div>
-    </div>
 
-</section>
+            <div class="row g-4">
 
-
-
-
-<section id="modes" class="py-5">
-    <div class="container" >
-        <div class="row text-light text-center text-lg-start position-relative">
-
-            <div class="mode-line">
-                <div class="mode-line-active"></div>
-            </div>
-
-            <div class="col-4 mode-item ">
-                <h3 class="mode-title">Три режима скорости</h3>
-                <p class="mode-text">
-                    Три режима езды позволят почувствовать себя комфортно в любой ситуации.
-                    Режим "S" увеличивает скорость, если опаздываете на работу. Во время прогулки
-                    по парку активируйте режим "D". Включите режим "Пешеход", когда двигаетесь по оживлённой улице.
-                </p>
-            </div>
-            <div class="col-4 mode-item">
-                <h3 class="mode-title">
-                    Система восстановления энергии
-                </h3>
-                <p class="mode-text">
-                    Во время торможения и движения по инерции система преобразовывает кинетическую энергию
-                    в электрическую, позволяя увеличить общий запас хода самоката.
-                </p>
-            </div>
-            <div class="col-4 mode-item">
-                <h3 class="mode-title">
-                    Мощная батарея
-                </h3>
-                <p class="mode-text">
-                    Самокат оснащен аккумулятором ёмкостью 12800 мАч. Это позволяет преодолевать расстояния до 45 км без подзарядки.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <img src="assets/images/product_2.png" alt="scooter">
-            </div>
-            <div class="col-4">
-                <img src="assets/images/product_3.png" alt="scooter">
-            </div>
-        </div>
-        <div class="row happy_img position-relative">
-            <div class="col">
-                <img src="assets/images/product_4.png" alt="happy people" class="img-fluid">
-            </div>
-            <div class="overlay-content position-absolute top-50 start-50 translate-middle text-start">
-                <img src="assets/images/mi-logo.svg" alt="MI-logo" class="img-fluid img-logo">
-                <div>
-                    <h3>Высокая скорость передвижения</h3>
-                    <p>Двигатель мощностью до 600 Вт позволяет развивать скорость до 25 км/ч.</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="appearance" class="py-5">
-    <div class="container">
-    <h3 class="text-title"> Лаконичный современный дизайн, в котором нет ничего лишнего</h3>
-    </div>
-    <div class="container">
-        <div class="row text-light text-center text-lg-start position-relative ">
-            <div class="col-6 d-flex ">
-                <div class="card position-relative">
-                    <img src="assets/images/appearance_1.png" class="card-img" alt="...">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-bg">
-                        <h5 class="card-title mb-2">Минималистичный дизайн</h5>
-                        <p class="card-text mb-0">Рама, компоненты и аксессуары скутера выдержаны в едином стиле, где удобство пользователя выходит на первое место. Одного прикосновения достаточно, чтобы запустить самокат</p>
+                <div class="col-12 col-md-6">
+                    <div class="card position-relative h-100">
+                        <img src="assets/images/appearance_1.png" alt="Минималистичный дизайн"
+                             class="card-img">
+                        <div class="card-img-overlay overlay-bg">
+                            <h5 class="card-title">Минималистичный дизайн</h5>
+                            <p class="card-text">
+                                Компоненты выполнены в едином стиле и удобны в использовании.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 d-flex">
-                <div class="card position-relative">
-                    <img src="assets/images/appearance_2.png" class="card-img" alt="...">
-                    <div class="card-img-overlay d-flex flex-column justify-content-end p-3 overlay-bg">
-                        <h5 class="card-title mb-2">Удобная панель управления</h5>
-                        <p class="card-text mb-0">Удобно расположенные элементы управления. Отображение 8 типов данных в реальном времени: скорость, режим, заряд аккумулятора, состояние блокировки и друга информация.</p>
+
+                <div class="col-12 col-md-6">
+                    <div class="card position-relative h-100">
+                        <img src="assets/images/appearance_2.png" alt="Панель управления"
+                             class="card-img">
+                        <div class="card-img-overlay overlay-bg">
+                            <h5 class="card-title">Удобная панель управления</h5>
+                            <p class="card-text">
+                                Отображение 8 параметров в реальном времени: скорость, заряд и пр.
+                            </p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="safety" class="py-5">
-    <div class="container">
-        <h3 class="text-title">Заботиться о вашей безопасности</h3>
-    </div>
-        <div id="modes-4" class="container" >
-            <div class="row text-light text-center text-lg-start position-relative">
 
-                <div class="mode-line-4">
+    <section id="safety" class="py-5">
+        <div class="container">
+            <h3 class="text-title mb-4 text-center text-lg-start">Безопасность</h3>
+        </div>
+
+        <div class="container">
+            <div class="row gy-4 position-relative">
+
+                <div class="mode-line">
                     <div class="mode-line-active-4"></div>
                 </div>
 
-                <div class="col-3 mode-item-4 ">
-                    <h3 class="mode-title-4">Яркие холодные огни</h3>
-                    <p class="mode-text">
-                        Продуманный угол рассеивания света позволяет сохранять хорошую видимость, не ослепляя других участников движения.
-                    </p>
+                <div class="col-12 col-md-3 mode-item-4">
+                    <h4 class="mode-title-4">Яркие огни</h4>
+                    <p>Широкий угол освещения при движении ночью.</p>
                 </div>
-                <div class="col-3 mode-item-4">
-                    <h3 class="mode-title-4">
-                        Двойная тормозная система
-                    </h3>
-                    <p class="mode-text-4">
-                       При нажатии на ручку тормоза системы переднего и заднего колеса активируется последовательно, сокращая тормозной путь и обеспечивая безопасную и плавную
-                        остановку.
-                    </p>
+
+                <div class="col-12 col-md-3 mode-item-4">
+                    <h4 class="mode-title-4">Двойной тормоз</h4>
+                    <p>Сокращенный тормозной путь и плавная остановка.</p>
                 </div>
-                <div class="col-3 mode-item-4">
-                    <h3 class="mode-title-4">
-                        Яркая задняя фара
-                    </h3>
-                    <p class="mode-text-4">
-                        При включении ходовых огней задняя фара включается автоматически. При нажатии на ручку тормоза она
-                        начинает мигать, предупреждая других участников движения.
-                    </p>
+
+                <div class="col-12 col-md-3 mode-item-4">
+                    <h4 class="mode-title-4">Задний фонарь</h4>
+                    <p>Мигает при торможении, повышая безопасность.</p>
                 </div>
-                <div class="col-3 mode-item-4">
-                    <h3 class="mode-title-4">
-                        Отражение спереди, сбоку и сзади
-                    </h3>
-                    <p class="mode-text-4">
-                        Улучшенные отражатели, размещенные с четырех сторон, делают вашу поездку в темное время безопаснее.
-                    </p>
+
+                <div class="col-12 col-md-3 mode-item-4">
+                    <h4 class="mode-title-4">Отражатели</h4>
+                    <p>Отражатели спереди, сбоку и сзади для видимости в темноте.</p>
                 </div>
+
             </div>
-            <div class="row position-relative">
-                <div class="col-8">
-                    <img src="assets/images/safety_1.png" alt="scooter">
+
+            <div class="row gy-4 mt-4">
+                <div class="col-12 col-md-8">
+                    <img src="assets/images/safety_1.png" alt="Передняя часть самоката"
+                         class="img-fluid w-100">
                 </div>
-                <div class="col-4">
-                    <img src="assets/images/safety_2.png" alt="scooter">
+                <div class="col-12 col-md-4">
+                    <img src="assets/images/safety_2.png" alt="Задняя фара"
+                         class="img-fluid w-100">
                 </div>
             </div>
         </div>
-</section>
-<section id="App" >
-    <div class="container">
-        <div class="row  text-start  position-relative">
-            <div class="col-6 ">
-                <div>
+    </section>
+
+
+    <section id="App" class="py-5">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+
+                <div class="col-12 col-md-6">
                     <h3 class="text-title">Мобильное приложение Mi Home</h3>
-                    <p>Подключите самокат к мобильному приложению Mi Home и используйте его для блокировки
-                        и разблокировки самоката, а так же просмотра основных данных: пробега, скорость, уровень заряда аккумулятора.</p>
+                    <p>
+                        Подключайте самокат к приложению, отслеживайте данные и управляйте блокировкой.
+                    </p>
+
+                    <div class="d-flex gap-3 pt-3 flex-wrap">
+                        <a href="https://apps.apple.com/us/app/xiaomi-home/id957323480"
+                           target="_blank" class="btn store-btn p-0" aria-label="Открыть в App Store">
+                            <img src="assets/images/App_store_button.svg" alt="App Store" class="img-fluid">
+                        </a>
+
+                        <a href="https://play.google.com/store/search?q=mi+home+xiaomi+home"
+                           target="_blank" class="btn store-btn p-0" aria-label="Открыть в Google Play">
+                            <img src="assets/images/Google_play_button.svg" alt="Google Play" class="img-fluid">
+                        </a>
+                    </div>
                 </div>
-                <div class="d-flex gap-3 pt-4">
-                    <a href="https://apps.apple.com/us/app/xiaomi-home/id957323480" target="_blank" class="btn store-btn p-0">
-                        <img src="assets/images/App_store_button.svg" alt="App Store" >
-                    </a>
-                    <a href="https://play.google.com/store/search?q=mi+home+xiaomi+home&c=apps&hl=ru" target="_blank" class="btn store-btn p-0">
-                        <img src="assets/images/Google_play_button.svg" alt="Google Play" >
-                    </a>
+
+                <div class="col-12 col-md-6 text-center">
+                    <img src="assets/images/app_1.png" alt="Mi Home приложение" class="img-fluid w-100">
                 </div>
-            </div>
-            <div class="col-6 ">
-                <img src="assets/images/app_1.png" alt="Mi Home">
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="about" class="py-1">
-    <div class="container">
-        <div class="row happy_img position-relative">
-            <div class="col">
-                <img src="assets/images/about_company_1.png" alt="Xiaomi company" class="img-fluid">
-            </div>
-            <div class="overlay-content position-absolute top-50 start-50 translate-middle text-start">
-                <img src="assets/images/mi-logo-orange.svg" alt="MI-logo" class="img-fluid img-logo">
-                <div>
+
+    <section id="about" class="py-5">
+        <div class="container">
+
+            <div class="row position-relative">
+                <div class="col">
+                    <img src="assets/images/about_company_1.png" alt="Компания Xiaomi"
+                         class="img-fluid w-100">
+                </div>
+
+                <div class="overlay-content position-absolute top-50 start-50 translate-middle">
+                    <img src="assets/images/mi-logo-orange.svg" alt="Логотип Xiaomi" class="img-fluid mb-2">
+
                     <h3 class="about_text">О бренде Xiaomi</h3>
-                    <p class="about_text">Компания Xiaomi была основана предпринимателем Лей Цзюнем в 2010 году под девизом - "Инновация для всех".</p>
-                    <p class="about_text">Мы верим, что высококачественные продукты и передовые технологии должны быть доступны каждому.</p>
+                    <p class="about_text">
+                        Xiaomi основана в 2010 году, руководствуясь принципом «Инновации для всех».
+                    </p>
+                    <p class="about_text">
+                        Мы создаём качественные продукты, доступные каждому.
+                    </p>
                 </div>
-
             </div>
-        </div>
-    </div>
-</section>
 
-<section id="reviews" class="py-5">
-    <div class="container">
-        <h3 class="text-title">Отзывы о Mi Scooter Pro 2</h3>
-        <div id="reviewsCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-wrapper">
+        </div>
+    </section>
+
+
+    <section id="reviews" class="py-5">
+        <div class="container">
+            <h3 class="text-title">Отзывы о Mi Scooter Pro 2</h3>
+
+            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-mb-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div >
-                                            <h5 class="card-title">Михаил Сафонов</h5>
-                                            <hr class="border border-2 line ">
-                                        </div>
-                                        <p class="card-text">Выбирал между двумя моделями: этим Mi Scooter Pro 2 и Ninebot Max 30P, в плюсы Макса - десятидюймовая резина и дальность пробега на одном заряде, скорость зарядки. В плюсах Xiaomi - удобство переноски(вес аппарата, развесовка). </p>
-                                        <p class="card-text">В итоге купил Xiaomi и поставил 10 дюймовые шины - получил комфортный при не большом весе самокат </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-mb-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div >
-                                            <h5 class="card-title">Имя скрыто</h5>
-                                            <hr class="border border-2 line ">
-                                        </div>
-                                        <p class="card-text">Владею также первой версией самоката (m365).</p>
-                                        <p class="card-text">В версии pro 2 исправлено множество недостатков m365:</p>
-                                        <ul>
-                                            <li><p class="card-text">усилен узел складывания и язычок</p></li>
-                                            <li><p class="card-text">батарея находится в отдельном жёстком алюминиевом корпусе, что исключает её поломку из-за тряски</p></li>
-                                            <li><p class="card-text">установлена поддержка заднего крыла и защита провода заднего габарита.</p></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-mb-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div >
-                                            <h5 class="card-title">Алексей 3.</h5>
-                                            <hr class="border border-2 line ">
-                                        </div>
-                                        <p class="card-text">Мой вес 57 кг, прошитый с максимальной скоростью (32 км/ч) в режиме S по Москве у меня осилил - 25 км и ещё оставалось 16% заряда.</p>
-                                        <p class="card-text">ОБЯЗАТЕЛЬНО: следите за давлением в камерах. Прям очень советую купить электро насос от Xiaomi, и раз в неделю подкачивайте. С завода самокат приезжает с сильно недокачанными </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-mb-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-title">Денис</div>
-                                        <hr class="border border-2 line ">
-                                        <div class="card-text">
-                                            Самокаты отличные! Купили сыну на новый год, теперь пользуется с удовольствием, быстро добирается до школы. С проблемами за 5 месяцев не сталкивались.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-mb-6 col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-title">Макс</div>
-                                        <hr class="border border-2 line ">
-                                        <div class="card-text">
-                                            <p>Купил самокат — сначала было немного непривычно после аналогов, но быстро втянулся. Все интуитивно понятно, быстро разобрался, а самое главное — низкая цена! Советую попробовать!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mt-4">
-            <button class="btn btn-add" data-bs-target="#reviewModalDialog" data-bs-toggle="modal">Оставить отзыв</button>
-            <div>
-                <button class="btn-circle" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev"><span>&#10094;</span></button>
-                <button class="btn-circle" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next"><span>&#10095;</span></button>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade" id="reviewModalDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content mb-3">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Михаил Сафонов</h5>
+                                        <hr class="line">
+
+                                        <p>Выбирал между Mi Pro 2 и Ninebot Max 30P...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Имя скрыто</h5>
+                                        <hr class="line">
+
+                                        <p>Обновлённая версия исправила недостатки m365...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Денис</h5>
+                                        <hr class="line">
+                                        <p>Самокат отличный, сын ездит каждый день.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Макс</h5>
+                                        <hr class="line">
+                                        <p>Быстро привык, функциональность отличная.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-4">
+
+                    <button class="btn btn-add" data-bs-target="#reviewModalDialog" data-bs-toggle="modal"
+                            aria-label="Оставить отзыв">
+                        Оставить отзыв
+                    </button>
+
+                    <div>
+                        <button class="btn-circle" type="button"
+                                data-bs-target="#reviewsCarousel" data-bs-slide="prev"
+                                aria-label="Предыдущий отзыв">
+                            &#10094;
+                        </button>
+
+                        <button class="btn-circle" type="button"
+                                data-bs-target="#reviewsCarousel" data-bs-slide="next"
+                                aria-label="Следующий отзыв">
+                            &#10095;
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="reviewModalDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content mb-3">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5">Отзыв</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="formReview" class="needs-validation"  novalidate>
+                        <form id="formReview" class="needs-validation" novalidate="">
                             <div class="mb-3">
                                 <label for="FormControlName" class="form-label">Ваше имя</label>
                                 <textarea type="text" class="form-control " id="FormControlName" rows="1" placeholder="Иванов Иван Иванович"></textarea>
@@ -361,192 +391,220 @@
 
                             <div class="mb-3">
                                 <label for="FormControlRevComment" class="form-label">Ваш комментарий</label>
-                                <textarea type="text" class="form-control " id="FormControlRevComment" rows="3" required></textarea>
+                                <textarea type="text" class="form-control " id="FormControlRevComment" rows="3" required=""></textarea>
                             </div>
 
-                            <button type="submit" class="btn submitBtn"  data-bs-dismiss="modalReview">Отправить отзыв</button>
+                            <button type="submit" class="btn submitBtn" data-bs-dismiss="modalReview">Отправить отзыв</button>
                         </form>
                     </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<section id="faq">
-    <div class="container">
-        <div class="row">
-            <div class="col-5">
-                <h3 class="text-title">Часто задаваемые вопросы</h3>
-                <p>Все ваши часто задаваемы вопросы об электросамокате Mi Scooter Pro 2.</p>
-                <p>Если у вас возникли есть собственный вопрос - задайте через форму обратной связи.</p>
-                <button class="btn btn-add" data-bs-target="#faqModelDialog" data-bs-toggle="modal">Задать вопрос</button>
-            </div>
-            <div class="col-7">
-                <div class="py-1">
-                    <h5>На него нужны права категории М?</h5>
-                    <hr class="border border-2 line ">
-                    <p>Продуманный угол света позволяет сохранять хорошую видимость, не ослепляя других участников движения.</p>
-                </div>
-                <div class="py-1">
-                    <h5>У меня 135 кг, выдержит ли этот самокат?</h5>
-                    <hr class="border border-2 line ">
-                    <p>Самокат определенно выдержит и будет ехать, но не с максимальной скоростью.</p>
-                </div>
-                <div class="py-1">
-                    <h5>Есть ли влагозащита?</h5>
-                    <hr class="border border-2 line ">
-                    <p>Электросамокат имеет степень защиты IP54. Он защищает от попадания пыли и брызг, попадающих в любом направлении. Погружения в воду может привести к поломке.</p>
-                </div>
-                <div class="py-1">
-                    <h5>Это версия для Китая или Европы?</h5>
-                    <hr class="border border-2 line ">
-                    <p>Это Европейская версия, со всеми обновлениями и евро-вилкой.</p>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="modal fade" id="faqModelDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    </section>
+
+
+    <section id="faq" class="py-5">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-12 col-lg-5">
+                    <h3 class="text-title">Часто задаваемые вопросы</h3>
+                    <p>Ответы на популярные вопросы о Mi Scooter Pro 2.</p>
+                    <button class="btn btn-add" data-bs-toggle="modal" data-bs-target="#faqModelDialog">
+                        Задать вопрос
+                    </button>
+                </div>
+
+                <div class="col-12 col-lg-7">
+
+                    <div class="py-2">
+                        <h5>Нужны ли права категории M?</h5>
+                        <hr class="line">
+                        <p>Нет, права не требуются.</p>
+                    </div>
+
+                    <div class="py-2">
+                        <h5>Выдержит ли он 135 кг?</h5>
+                        <hr class="line">
+                        <p>Максимальная нагрузка – 100 кг.</p>
+                    </div>
+
+                    <div class="py-2">
+                        <h5>Есть ли влагозащита?</h5>
+                        <hr class="line">
+                        <p>IP54 — защита от брызг.</p>
+                    </div>
+
+                    <div class="py-2">
+                        <h5>Это европейская версия?</h5>
+                        <hr class="line">
+                        <p>Да, версия для Европы.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="faqModelDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content ">
                     <div class="modal-header">
                         Вопрос
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="formFAQ" class="needs-validation"  novalidate>
+                        <form id="formFAQ" class="needs-validation" novalidate="">
                             <div class="mb-3">
                                 <label for="FormControlNameFAQ" class="form-label">Ваше ФИО</label>
-                                <textarea type="text" class="form-control " id="FormControlNameFAQ" rows="1" required></textarea>
+                                <textarea type="text" class="form-control " id="FormControlNameFAQ" rows="1" required=""></textarea>
                             </div>
 
                             <div class="mb-3">
                                 <label for="FormControlQuestion" class="form-label">Ваш вопрос</label>
-                                <textarea type="text" class="form-control " id="FormControlQuestion" rows="3" required></textarea>
+                                <textarea type="text" class="form-control " id="FormControlQuestion" rows="3" required=""></textarea>
                             </div>
                             <button type="submit" class="btn btn-secondary submitBtn " id="faqBtn" data-bs-dismiss="faqBtn">Отправить вопрос</button>
                         </form>
                     </div>
 
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
-</section>
+    <section id="product_card" class="py-5">
+        <div class="container">
+            <div class="glass-box">
+                <div class="row gy-4 align-items-center">
 
-<section id="product_card" class="py-1">
-    <div class="container">
-        <div class="glass-box">
-            <div class="row">
-                <div class="col-4">
-                    <h3 class="text-title">Mi Electric Scooter Pro 2</h3>
-                    <p class="price">54 990 ₽</p>
-                    <div class="btn-group pills-radio" role="group">
-                        <input type="radio" class="btn-check btn-light" name="theme_2" id="dark_theme_1" autocomplete="off" checked>
-                        <label class="btn btn-outline-light" for="dark_theme_1">Белый</label>
+                    <div class="col-12 col-md-4">
 
-                        <input type="radio" class="btn-check btn-light" name="theme_2" id="ligth_theme_1" autocomplete="off">
-                        <label class="btn btn-outline-light" for="ligth_theme_1">Чёрный</label>
+                        <h3 class="text-title">Mi Electric Scooter Pro 2</h3>
+                        <p class="price">54 990 ₽</p>
+
+                        <div class="btn-group pills-radio mb-3" role="group" aria-label="Выбор цвета">
+                            <input type="radio" class="btn-check" name="color1" id="white_1" checked>
+                            <label class="btn btn-outline-light" for="white_1">Белый</label>
+
+                            <input type="radio" class="btn-check" name="color1" id="black_1">
+                            <label class="btn btn-outline-light" for="black_1">Чёрный</label>
+                        </div>
+
+                        <h4 class="text-title mb-2">Комплект поставки</h4>
+                        <ul class="text-light small">
+                            <li>Адаптер питания</li>
+                            <li>Шестигранный ключ</li>
+                            <li>Удлинитель для насоса</li>
+                            <li>Винты x5</li>
+                            <li>Шина запасная</li>
+                            <li>Руководство пользователя</li>
+                        </ul>
+
+                        <button class="btn btn-accent mt-2"
+                                data-bs-toggle="modal" data-bs-target="#order">
+                            Купить
+                        </button>
+
                     </div>
-                    <div class="delivery">
-                        <h4 class="text-title">Комплект поставки</h4>
-                        <p>Адаптер питания</p>
-                        <p>Шестигранный ключ</p>
-                        <p>Удлинитель для насоса</p>
-                        <p>Винты x5 шт.</p>
-                        <p>Запасная шина</p>
-                        <p>Руководство пользователя</p>
-                        <p>Буклет с информацией</p>
-                    </div>
-                    <button class="btn btn-accent" data-bs-target="#order" data-bs-toggle="modal">Купить</button>
-                </div>
-                <div class="col-8">
-                    <img src="assets/images/product_card_1.png" alt="Mi Electric Scooter Pro 2" width="100%" height="auto">
-                </div>
 
+                    <div class="col-12 col-md-8 text-center">
+                        <img src="assets/images/product_card_1.png"
+                             alt="Mi Electric Scooter Pro 2"
+                             class="img-fluid w-100">
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-</section>
 
-<div class="modal fade" id="order" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" >Оформление заказа</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-            </div>
-            <div class="modal-body">
-                <form id="formOrder" class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="FormControlFIO" class="form-label">Введите ФИО</label>
-                        <div class="input-group">
-                            <div class="input-group-text">👤</div>
-                            <textarea type="text" class="form-control " id="FormControlFIO" rows="1" placeholder="Иванов Иван Иванович" required></textarea>
-                        </div>
+        <div class="modal fade" id="order" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Оформление заказа</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                     </div>
-                    <div class="mb-3">
-                        <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
-                        <div class="input-group">
-                            <div class="input-group-text">📮</div>
-                            <input type="email" class="form-control " id="InputEmail1" aria-describedby="emailHelp" placeholder="name@example.com" required>
-                            <div class="invalid-feedback">Пожалуйста, введите корректный email</div>
-                        </div>
-                        <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="InputNumberPhone" class="form-label">Номер телефона</label>
-                        <div class="input-group">
-                            <div class="input-group-text">
-                                📞
+                    <div class="modal-body">
+                        <form id="formOrder" class="needs-validation" novalidate="">
+                            <div class="mb-3">
+                                <label for="FormControlFIO" class="form-label">Введите ФИО</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">👤</div>
+                                    <textarea type="text" class="form-control " id="FormControlFIO" rows="1" placeholder="Иванов Иван Иванович" required=""></textarea>
+                                </div>
                             </div>
-                            <input type="tel" class="form-control" id="InputNumberPhone" placeholder="+7 (___) ___-__-__" required>
-                            <div class="invalid-feedback">Введите номер телефона</div>
-                        </div>
-                    </div>
+                            <div class="mb-3">
+                                <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">📮</div>
+                                    <input type="email" class="form-control " id="InputEmail1" aria-describedby="emailHelp" placeholder="name@example.com" required="">
+                                    <div class="invalid-feedback">Пожалуйста, введите корректный email</div>
+                                </div>
+                                <div id="emailHelp" class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
+                            </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Выберите цвет</label>
-                        <div class="d-flex gap-3">
-                            <input type="radio" class="btn-check" name="colorOptions" id="whiteColor" value="#ffffff">
-                            <label class="btn btn-outline-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="whiteColor" title="Белый" style="width: 50px; height: 50px;">
-                                <div style="width: 30px; height: 30px; background-color: #ffffff; border-radius: 50%; border: 1px solid #ccc;"></div>
-                            </label>
+                            <div class="mb-3">
+                                <label for="InputNumberPhone" class="form-label">Номер телефона</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">
+                                        📞
+                                    </div>
+                                    <input type="tel" class="form-control" id="InputNumberPhone" placeholder="+7 (___) ___-__-__" required="">
+                                    <div class="invalid-feedback">Введите номер телефона</div>
+                                </div>
+                            </div>
 
-                            <input type="radio" class="btn-check" name="colorOptions" id="blackColor" value="#000000" checked>
-                            <label class="btn btn-outline-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="blackColor" title="Чёрный" style="width: 50px; height: 50px;">
-                                <div style="width: 30px; height: 30px; background-color: #000000; border-radius: 50%;"></div>
-                            </label>
-                        </div>
-                    </div>
+                            <div class="mb-3">
+                                <label class="form-label">Выберите цвет</label>
+                                <div class="d-flex gap-3">
+                                    <input type="radio" class="btn-check" name="colorOptions" id="whiteColor" value="#ffffff">
+                                    <label class="btn btn-outline-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="whiteColor" title="Белый" style="width: 50px; height: 50px;">
+                                        <div style="width: 30px; height: 30px; background-color: #ffffff; border-radius: 50%; border: 1px solid #ccc;"></div>
+                                    </label>
 
-                    <div class="mb-3">
-                        <label for="FormControlAddress" class="form-label">Введите адрес доставки</label>
-                        <div class="input-group">
-                            <div class="input-group-text">🏠</div>
-                            <textarea type="text" class="form-control " id="FormControlAddress" rows="1" required></textarea>
-                        </div>
+                                    <input type="radio" class="btn-check" name="colorOptions" id="blackColor" value="#000000" checked="">
+                                    <label class="btn btn-outline-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="blackColor" title="Чёрный" style="width: 50px; height: 50px;">
+                                        <div style="width: 30px; height: 30px; background-color: #000000; border-radius: 50%;"></div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="FormControlAddress" class="form-label">Введите адрес доставки</label>
+                                <div class="input-group">
+                                    <div class="input-group-text">🏠</div>
+                                    <textarea type="text" class="form-control " id="FormControlAddress" rows="1" required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="FormControlComment" class="form-label">Комментарий к заказу</label>
+                                <textarea class="form-control" id="FormControlComment" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-secondary submitBtn " data-bs-dismiss="submitBtn">Отправить заказ</button>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="FormControlComment" class="form-label">Комментарий к заказу</label>
-                        <textarea class="form-control" id="FormControlComment" rows="3" ></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-secondary submitBtn " data-bs-dismiss="submitBtn">Отправить заказ</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-<footer class="container py-3">
-    <p>&copy;2010-2011 Xiaomi.</p>
+    </section>
+</main>
+
+
+<footer class="container py-3 text-center text-light small">
+    <p>&copy; 2010–2024 Xiaomi.</p>
     <p>Все права защищены.</p>
 </footer>
+
+
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
+
 </body>
 </html>

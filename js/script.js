@@ -1,118 +1,141 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const navHeight = document.querySelector("header").offsetHeight;
 
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(link=> {
-        link.addEventListener("click", function(e) {
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector("header");
+    const navHeight = nav ? nav.offsetHeight : 0;
+
+    document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute("href"));
             if (target) {
-                const topPos = target.offsetTop - navHeight; // корректируем высоту
-                window.scrollTo({
-                    top: topPos,
-                    behavior: "smooth"
-                });
+                const targetPos = target.offsetTop - navHeight;
+                window.scrollTo({ top: targetPos, behavior: "smooth" });
             }
+            this.blur();
         });
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll(".mode-item");
-    const activeLine = document.querySelector(".mode-line-active");
+function makeHoverLine(itemsSelector, lineSelector, stepPercent, titleSelector) {
+    const items = document.querySelectorAll(itemsSelector);
+    const activeLine = document.querySelector(lineSelector);
+
+    if (!items.length || !activeLine) return;
+
     const defaultIndex = 0;
-    items.forEach((item, index) => {
-        item.addEventListener("mouseenter", () => {
-            // Двигаем линию
-            activeLine.style.left = `${index * 33.333}%`;
 
-            // Меняем цвет заголовков
-            items.forEach(i => i.querySelector(".mode-title").style.color = "var(--color-text-light)");
-            item.querySelector(".mode-title").style.color = "var(--color-accent)";
+    let container = items[0].parentElement;
+    while (container && !container.classList.contains("row")) {
+        container = container.parentElement;
+    }
+    if (!container) container = items[0].parentElement;
+
+    function setActive(index) {
+        activeLine.style.left = `${index * stepPercent}%`;
+
+        items.forEach(i => {
+            const title = i.querySelector(titleSelector);
+            if (title) title.style.color = "var(--color-text-light)";
         });
-    });
 
-    const row = document.querySelector("#modes .row");
-    row.addEventListener("mouseleave", () => {
-        // Возвращаем линию и цвет заголовка к дефолту
-        activeLine.style.left = `${defaultIndex * 33.333}%`;
-        items.forEach(i => i.querySelector(".mode-title").style.color = "var(--color-text-light)");
-        items[defaultIndex].querySelector(".mode-title").style.color = "var(--color-accent)";
-    });
-});
+        const activeTitle = items[index].querySelector(titleSelector);
+        if (activeTitle) activeTitle.style.color = "var(--color-accent)";
+    }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll(".mode-item-4");
-    const activeLine = document.querySelector(".mode-line-active-4");
-    const defaultIndex = 0;
-    items.forEach((item, index) => {
-        item.addEventListener("mouseenter", () => {
-            // Двигаем линию
-            activeLine.style.left = `${index * 25}%`;
-
-            // Меняем цвет заголовков
-            items.forEach(i => i.querySelector(".mode-title-4").style.color = "var(--color-text-light)");
-            item.querySelector(".mode-title-4").style.color = "var(--color-accent)";
+    function setAllOrange() {
+        items.forEach(i => {
+            const title = i.querySelector(titleSelector);
+            if (title) title.style.color = "var(--color-accent)";
         });
+        activeLine.style.left = "0";
+    }
+
+    function checkLineVisible() {
+        if (activeLine.offsetParent === null) {
+            setAllOrange();
+        } else {
+            setActive(defaultIndex);
+        }
+    }
+
+    items.forEach((item, index) => {
+        item.addEventListener("mouseenter", () => setActive(index));
+        item.addEventListener("focus", () => setActive(index));
+        item.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            setActive(index);
+        }, { passive: false });
     });
 
-    const row = document.querySelector("#modes-4 .row");
-    row.addEventListener("mouseleave", () => {
-        // Возвращаем линию и цвет заголовка к дефолту
-        activeLine.style.left = `${defaultIndex * 25}%`;
-        items.forEach(i => i.querySelector(".mode-title-4").style.color = "var(--color-text-light)");
-        items[defaultIndex].querySelector(".mode-title-4").style.color = "var(--color-accent)";
-    });
-});
+    container.addEventListener("mouseleave", () => setActive(defaultIndex));
+    container.addEventListener("touchend", () => setActive(defaultIndex));
+
+    checkLineVisible();
+    window.addEventListener("resize", checkLineVisible);
+}
+
+
+makeHoverLine(".mode-item", ".mode-line-active", 33.333, ".mode-title");
+makeHoverLine(".mode-item-4", ".mode-line-active-4", 25, ".mode-title-4");
+
 
 (function () {
-    'use strict'
-    const forms = document.querySelectorAll('.needs-validation')
-
+    "use strict";
+    const forms = document.querySelectorAll(".needs-validation");
     Array.from(forms).forEach(form => {
-        form.addEventListener('submit', function (event) {
+        form.addEventListener("submit", function (event) {
             if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
+                event.preventDefault();
+                event.stopPropagation();
             }
-            form.classList.add('was-validated')
-        }, false)
-    })
-})()
+            form.classList.add("was-validated");
+        }, false);
+    });
+})();
 
-document.getElementById('submitBtn').addEventListener('click', function (event) {
-    const form = document.querySelector('#formOrder');
 
-    if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-        form.classList.add('was-validated');
-    } else {
-        const modal = bootstrap.Modal.getInstance(document.getElementById('myModal'));
-        modal.hide();
-    }
+function modalFormHandler(btnId, formSelector, modalId) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+
+    btn.addEventListener("click", event => {
+        const form = document.querySelector(formSelector);
+        if (!form) return;
+
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add("was-validated");
+        } else {
+            const modalEl = document.getElementById(modalId);
+            const modal = modalEl ? bootstrap.Modal.getInstance(modalEl) : null;
+            if (modal) modal.hide();
+        }
+
+        btn.blur();
+    });
+}
+
+modalFormHandler("submitBtn", "#formOrder", "myModal");
+modalFormHandler("faqBtn", "#formOrder", "faqModelDialog");
+modalFormHandler("modalReview", "#formReview", "reviewModelDialog");
+
+
+document.querySelectorAll("button, .btn").forEach(btn => {
+    btn.addEventListener("mouseup", () => btn.blur());
+    btn.addEventListener("keyup", e => {
+        if (e.key === "Enter" || e.key === " ") btn.blur();
+    });
 });
 
-document.getElementById('faqBtn').addEventListener('click', function (event) {
-    const form = document.querySelector('#formOrder');
+const navbar = document.querySelector('.custom-navbar');
 
-    if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-        form.classList.add('was-validated');
-    } else {
-        const modal = bootstrap.Modal.getInstance(document.getElementById('faqModelDialog'));
-        modal.hide();
-    }
-});
-document.getElementById('modalReview').addEventListener('click', function (event) {
-    const form = document.querySelector('#formReview');
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('show.bs.modal', () => {
+        navbar.style.display = 'none';
+    });
 
-    if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-        form.classList.add('was-validated');
-    } else {
-        const modal = bootstrap.Modal.getInstance(document.getElementById('reviewModelDialog'));
-        modal.hide()
-    }
+    modal.addEventListener('hidden.bs.modal', () => {
+        navbar.style.display = '';
+    });
 });
